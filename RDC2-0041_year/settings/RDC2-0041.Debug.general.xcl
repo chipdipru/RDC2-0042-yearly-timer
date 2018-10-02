@@ -1,0 +1,15 @@
+"F:\WorkPrograms\EWARM 7.4\arm\bin\armproc.dll" 
+
+"F:\WorkPrograms\EWARM 7.4\arm\bin\armstlink2.dll" 
+
+"F:\ArmProjects\RDC2-0041_year\Debug\Exe\RDC2-0041.out" 
+
+--plugin "F:\WorkPrograms\EWARM 7.4\arm\bin\armbat.dll" 
+
+--device_macro "F:\WorkPrograms\EWARM 7.4\arm\config\debugger\ST\STM32F0xx.dmac" 
+
+--flash_loader "F:\WorkPrograms\EWARM 7.4\arm\config\flashloader\ST\FlashSTM32F04xx6.board" 
+
+
+
+

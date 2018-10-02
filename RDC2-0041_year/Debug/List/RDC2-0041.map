@@ -1,0 +1,572 @@
+###############################################################################
+#
+# IAR ELF Linker V7.60.1.11101/W32 for ARM                30/Sep/2018  22:28:55
+# Copyright 2007-2016 IAR Systems AB.
+#
+#    Output file  =  F:\ArmProjects\RDC2-0041_year\Debug\Exe\RDC2-0041.out
+#    Map file     =  F:\ArmProjects\RDC2-0041_year\Debug\List\RDC2-0041.map
+#    Command line =  
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\DataTables.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\Display.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\EventHandler.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\I2C.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\Key.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\LED.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\main.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\RDC2-0041_USB.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\RTC.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\SPI_EEPROM.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\startup_stm32f042.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\stm32f0xx_it.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\system_stm32f0xx.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\usb_bsp.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\usb_core.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\usb_dcd.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\usb_dcd_int.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\usbd_core.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\usbd_custom_hid_core.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\usbd_desc.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\usbd_ioreq.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\usbd_pwr.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\usbd_req.o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Obj\usbd_usr.o -o
+#        F:\ArmProjects\RDC2-0041_year\Debug\Exe\RDC2-0041.out --redirect
+#        _Printf=_PrintfFull --redirect _Scanf=_ScanfFull --map
+#        F:\ArmProjects\RDC2-0041_year\Debug\List\RDC2-0041.map --config
+#        "F:\WorkPrograms\EWARM 7.4\arm\config\linker\ST\stm32f042x6.icf"
+#        --semihosting --entry __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x08000000 { ro section .intvec };
+"P1":  place in [from 0x08000000 to 0x08007fff] { ro };
+"P2":  place in [from 0x20000000 to 0x200017ff] { rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A1":                                       0xc0
+  .intvec            ro code  0x08000000    0xc0  startup_stm32f042.o [1]
+                            - 0x080000c0    0xc0
+
+"P1":                                     0x38e5
+  .text              ro code  0x080000c0   0x8a8  main.o [1]
+  .text              ro code  0x08000968    0xdc  RDC2-0041_USB.o [1]
+  .text              ro code  0x08000a44   0x35e  RTC.o [1]
+  .text              ro code  0x08000da2     0xa  usbd_usr.o [1]
+  .text              ro code  0x08000dac   0x2d8  Display.o [1]
+  .text              ro code  0x08001084   0x228  SPI_EEPROM.o [1]
+  .text              ro code  0x080012ac   0x11c  LED.o [1]
+  .text              ro code  0x080013c8   0x1c8  Key.o [1]
+  .text              ro code  0x08001590    0xe0  I32DivModFast.o [4]
+  .text              ro code  0x08001670   0x11c  EventHandler.o [1]
+  .text              ro code  0x0800178c   0x2b4  usbd_core.o [1]
+  .text              ro code  0x08001a40   0x1f2  usbd_custom_hid_core.o [1]
+  .rodata            const    0x08001c32     0x2  RTC.o [1]
+  .text              ro code  0x08001c34   0x1bc  I2C.o [1]
+  .text              ro code  0x08001df0     0x2  IntDivZer.o [4]
+  .text              ro code  0x08001df2     0x2  startup_stm32f042.o [1]
+  .text              ro code  0x08001df4   0x114  usb_bsp.o [1]
+  .text              ro code  0x08001f08   0x11c  usbd_desc.o [1]
+  .text              ro code  0x08002024   0x50c  usb_dcd.o [1]
+  .text              ro code  0x08002530   0x5f6  usbd_req.o [1]
+  .text              ro code  0x08002b26    0xcc  usbd_ioreq.o [1]
+  .text              ro code  0x08002bf2     0x2  startup_stm32f042.o [1]
+  .text              ro code  0x08002bf4   0x4b4  usb_core.o [1]
+  .text              ro code  0x080030a8   0x464  usb_dcd_int.o [1]
+  .text              ro code  0x0800350c   0x130  usbd_pwr.o [1]
+  .text              ro code  0x0800363c    0x94  system_stm32f0xx.o [1]
+  .text              ro code  0x080036d0    0x3c  zero_init3.o [4]
+  .text              ro code  0x0800370c    0x3c  packbits_init_single.o [4]
+  .text              ro code  0x08003748    0x34  stm32f0xx_it.o [1]
+  .rodata            const    0x0800377c    0x30  usbd_custom_hid_core.o [1]
+  .rodata            const    0x080037ac    0x2c  usbd_custom_hid_core.o [1]
+  .text              ro code  0x080037d8    0x28  data_init.o [4]
+  .iar.init_table    const    0x08003800    0x20  - Linker created -
+  .rodata            const    0x08003820    0x1c  DataTables.o [1]
+  .text              ro code  0x0800383c    0x1a  cmain.o [4]
+  .text              ro code  0x08003856     0x4  low_level_init.o [3]
+  .text              ro code  0x0800385a     0x8  exit.o [3]
+  .text              ro code  0x08003862     0x2  startup_stm32f042.o [1]
+  .text              ro code  0x08003864     0xa  cexit.o [4]
+  .text              ro code  0x0800386e     0x2  startup_stm32f042.o [1]
+  .text              ro code  0x08003870    0x14  exit.o [5]
+  .rodata            const    0x08003884    0x14  usbd_desc.o [1]
+  .rodata            const    0x08003898    0x10  usbd_desc.o [1]
+  .text              ro code  0x080038a8    0x10  startup_stm32f042.o [1]
+  .rodata            const    0x080038b8     0xc  DataTables.o [1]
+  .rodata            const    0x080038c4     0xc  usbd_desc.o [1]
+  .rodata            const    0x080038d0     0xc  usbd_desc.o [1]
+  .text              ro code  0x080038dc     0xc  cstartup_M.o [4]
+  .rodata            const    0x080038e8     0x8  usbd_desc.o [1]
+  .rodata            const    0x080038f0     0x4  DataTables.o [1]
+  .rodata            const    0x080038f4     0x4  main.o [1]
+  .rodata            const    0x080038f8     0x4  usbd_desc.o [1]
+  .text              ro code  0x080038fc     0x2  startup_stm32f042.o [1]
+  .text              ro code  0x080038fe     0x2  startup_stm32f042.o [1]
+  .text              ro code  0x08003900     0x2  startup_stm32f042.o [1]
+  .text              ro code  0x08003902     0x2  startup_stm32f042.o [1]
+  .text              ro code  0x08003904     0x2  startup_stm32f042.o [1]
+  .text              ro code  0x08003906     0x2  startup_stm32f042.o [1]
+  .text              ro code  0x08003908     0x2  startup_stm32f042.o [1]
+  .text              ro code  0x0800390a     0x2  startup_stm32f042.o [1]
+  .text              ro code  0x0800390c     0x2  startup_stm32f042.o [1]
+  .text              ro code  0x0800390e     0x2  startup_stm32f042.o [1]
+  .text              ro code  0x08003910     0x2  startup_stm32f042.o [1]
+  .text              ro code  0x08003912     0x2  startup_stm32f042.o [1]
+  .text              ro code  0x08003914     0x2  startup_stm32f042.o [1]
+  .text              ro code  0x08003916     0x2  startup_stm32f042.o [1]
+  .text              ro code  0x08003918     0x2  startup_stm32f042.o [1]
+  .text              ro code  0x0800391a     0x2  startup_stm32f042.o [1]
+  .text              ro code  0x0800391c     0x2  startup_stm32f042.o [1]
+  .text              ro code  0x0800391e     0x2  startup_stm32f042.o [1]
+  .rodata            const    0x08003920     0x0  zero_init3.o [4]
+  .rodata            const    0x08003920     0x0  packbits_init_single.o [4]
+  Initializer bytes  const    0x08003920    0x85  <for P2-1>
+                            - 0x080039a5  0x38e5
+
+"P2", part 1 of 3:                          0x9d
+  P2-1                        0x20000000    0x9d  <Init block>
+    .data            inited   0x20000000     0x4  Display.o [1]
+    .data            inited   0x20000004     0x4  EventHandler.o [1]
+    .data            inited   0x20000008     0x4  main.o [1]
+    .data            inited   0x2000000c    0x1c  usbd_core.o [1]
+    .data            inited   0x20000028     0x4  usbd_core.o [1]
+    .data            inited   0x2000002c    0x24  usbd_custom_hid_core.o [1]
+    .data            inited   0x20000050    0x1c  usbd_desc.o [1]
+    .data            inited   0x2000006c    0x1c  usbd_desc.o [1]
+    .data            inited   0x20000088    0x14  usbd_usr.o [1]
+    .data            inited   0x2000009c     0x1  RDC2-0041_USB.o [1]
+                            - 0x2000009d    0x9d
+
+"P2", part 2 of 3:                         0x400
+  CSTACK                      0x200000a0   0x400  <Block>
+    CSTACK           uninit   0x200000a0   0x400  <Block tail>
+                            - 0x200004a0   0x400
+
+"P2", part 3 of 3:                         0x1d0
+  .bss               zero     0x200004a0    0xc8  RDC2-0041_USB.o [1]
+  .bss               zero     0x20000568    0x40  RDC2-0041_USB.o [1]
+  .bss               zero     0x200005a8    0x40  usbd_custom_hid_core.o [1]
+  .bss               zero     0x200005e8    0x40  usbd_req.o [1]
+  .bss               zero     0x20000628     0x8  EventHandler.o [1]
+  .bss               zero     0x20000630     0x8  main.o [1]
+  .bss               zero     0x20000638     0x4  Display.o [1]
+  .bss               zero     0x2000063c     0x4  Display.o [1]
+  .bss               zero     0x20000640     0x4  Key.o [1]
+  .bss               zero     0x20000644     0x4  main.o [1]
+  .bss               zero     0x20000648     0x4  usb_dcd.o [1]
+  .bss               zero     0x2000064c     0x4  usbd_custom_hid_core.o [1]
+  .bss               zero     0x20000650     0x4  usbd_custom_hid_core.o [1]
+  .bss               zero     0x20000654     0x4  usbd_custom_hid_core.o [1]
+  .bss               zero     0x20000658     0x4  usbd_pwr.o [1]
+  .bss               zero     0x2000065c     0x4  usbd_pwr.o [1]
+  .bss               zero     0x20000660     0x4  usbd_req.o [1]
+  .bss               zero     0x20000664     0x2  EventHandler.o [1]
+  .bss               zero     0x20000666     0x1  Display.o [1]
+  .bss               zero     0x20000667     0x1  Display.o [1]
+  .bss               zero     0x20000668     0x1  main.o [1]
+  .bss               zero     0x20000669     0x1  RDC2-0041_USB.o [1]
+  .bss               zero     0x2000066a     0x1  RTC.o [1]
+  .bss               zero     0x2000066b     0x1  usbd_custom_hid_core.o [1]
+  .bss               zero     0x2000066c     0x1  usbd_custom_hid_core.o [1]
+  .bss               zero     0x2000066d     0x1  usbd_req.o [1]
+                            - 0x2000066e   0x1ce
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x1ce:
+          0x200004a0  0x1ce
+
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0x85 (84% of destination):
+          0x08003920   0x85
+    1 destination range, total size 0x9d:
+          0x20000000   0x9d
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+F:\ArmProjects\RDC2-0041_year\Debug\Obj: [1]
+    DataTables.o                          44
+    Display.o                   728        3       14
+    EventHandler.o              284        3       14
+    I2C.o                       444
+    Key.o                       456                 4
+    LED.o                       284
+    RDC2-0041_USB.o             220        1      266
+    RTC.o                       862        2        1
+    SPI_EEPROM.o                552
+    main.o                    2 216        8       17
+    startup_stm32f042.o         252
+    stm32f0xx_it.o               52
+    system_stm32f0xx.o          148
+    usb_bsp.o                   276
+    usb_core.o                1 204
+    usb_dcd.o                 1 292                 4
+    usb_dcd_int.o             1 124
+    usbd_core.o                 692       27       32
+    usbd_custom_hid_core.o      498      122      114
+    usbd_desc.o                 284      120       56
+    usbd_ioreq.o                204
+    usbd_pwr.o                  304                 8
+    usbd_req.o                1 526                69
+    usbd_usr.o                   10       17       20
+    -------------------------------------------------
+    Total:                   13 912      347      619
+
+command line: [2]
+    -------------------------------------------------
+    Total:
+
+dl6M_tln.a: [3]
+    exit.o                        8
+    low_level_init.o              4
+    -------------------------------------------------
+    Total:                       12
+
+rt6M_tl.a: [4]
+    I32DivModFast.o             224
+    IntDivZer.o                   2
+    cexit.o                      10
+    cmain.o                      26
+    cstartup_M.o                 12
+    data_init.o                  40
+    packbits_init_single.o       60
+    zero_init3.o                 60
+    -------------------------------------------------
+    Total:                      434
+
+shb_l.a: [5]
+    exit.o                       20
+    -------------------------------------------------
+    Total:                       20
+
+    Linker created                        32    1 024
+-----------------------------------------------------
+    Grand Total:             14 378      379    1 643
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.iar.init_table$$Base   0x08003800          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x08003820          --   Gb  - Linker created -
+?main                   0x0800383d         Code  Gb  cmain.o [4]
+ADDRESS                 0x20000660    0x4  Data  Gb  usbd_req.o [1]
+ActivateEvent           0x08000465   0xc2  Code  Gb  main.o [1]
+BinToDec                0x08000d67   0x16  Code  Gb  RTC.o [1]
+CHARACTERS              0x08003820   0x1c  Data  Gb  DataTables.o [1]
+CSTACK$$Base            0x200000a0          --   Gb  - Linker created -
+CSTACK$$Limit           0x200004a0          --   Gb  - Linker created -
+CTR                     0x080030a9  0x2fe  Code  Gb  usb_dcd_int.o [1]
+ChangeDisplayState      0x080006c3   0x64  Code  Gb  main.o [1]
+ClearDTOG_RX            0x08002d39   0x2e  Code  Gb  usb_core.o [1]
+ClearDTOG_TX            0x08002d67   0x2e  Code  Gb  usb_core.o [1]
+CustomHID_ReportDescriptor
+                        0x0800377c   0x30  Data  Gb  usbd_custom_hid_core.o [1]
+DCD_DevConnect          0x08002505   0x14  Code  Gb  usb_dcd.o [1]
+DCD_EP_Close            0x0800220b   0xaa  Code  Gb  usb_dcd.o [1]
+DCD_EP_ClrStall         0x08002465   0x5c  Code  Gb  usb_dcd.o [1]
+DCD_EP_Open             0x080020b7  0x154  Code  Gb  usb_dcd.o [1]
+DCD_EP_PrepareRx        0x080022b5   0x74  Code  Gb  usb_dcd.o [1]
+DCD_EP_SetAddress       0x080024c1   0x44  Code  Gb  usb_dcd.o [1]
+DCD_EP_Stall            0x080023d7   0x8e  Code  Gb  usb_dcd.o [1]
+DCD_EP_Tx               0x08002329   0xae  Code  Gb  usb_dcd.o [1]
+DCD_Init                0x08002025   0x40  Code  Gb  usb_dcd.o [1]
+DCD_PMA_Config          0x08002069   0x4e  Code  Gb  usb_dcd.o [1]
+DEBOUNCE_TIMER_ISR      0x0800145b   0x4a  Code  Gb  Key.o [1]
+DIGITS_PINS             0x080038f0    0x4  Data  Gb  DataTables.o [1]
+DISPLAY_TIMER_ISR       0x08000e3f   0xdc  Code  Gb  Display.o [1]
+DISPLAY_TIMER_ISR::CurDigit
+                        0x20000667    0x1  Data  Lc  Display.o [1]
+DataForDisplay          0x20000644    0x4  Data  Gb  main.o [1]
+DaysFromYearStart       0x08000645   0x44  Code  Gb  main.o [1]
+DecToBin                0x08000d7d   0x26  Code  Gb  RTC.o [1]
+DisplayState            0x20000666    0x1  Data  Lc  Display.o [1]
+Display_Init            0x08000f35   0x6c  Code  Gb  Display.o [1]
+Display_OFF             0x08000fd9   0x44  Code  Gb  Display.o [1]
+Display_ON              0x08000fbf   0x1a  Code  Gb  Display.o [1]
+Display_PointSet        0x08000fa1   0x1e  Code  Gb  Display.o [1]
+Display_SetState        0x08001023    0x6  Code  Gb  Display.o [1]
+Display_SetValue        0x08000f1b   0x1a  Code  Gb  Display.o [1]
+Display_State           0x0800101d    0x6  Code  Gb  Display.o [1]
+Dpoint                  0x2000063c    0x4  Data  Lc  Display.o [1]
+DpointPtr               0x20000000    0x4  Data  Lc  Display.o [1]
+EEPROM_Init             0x08001085   0x6e  Code  Gb  SPI_EEPROM.o [1]
+EEPROM_IsPresent        0x080011fb   0x70  Code  Gb  SPI_EEPROM.o [1]
+EEPROM_Read             0x08001163   0x50  Code  Gb  SPI_EEPROM.o [1]
+EEPROM_ReadStatus       0x080011b3   0x2e  Code  Gb  SPI_EEPROM.o [1]
+EEPROM_WhileNotReady    0x080011e1   0x1a  Code  Gb  SPI_EEPROM.o [1]
+EEPROM_Write            0x080010f3   0x70  Code  Gb  SPI_EEPROM.o [1]
+EXTI0_1_IRQHandler      0x08003775    0x8  Code  Gb  stm32f0xx_it.o [1]
+EXTI2_3_IRQHandler      0x08003765    0x8  Code  Gb  stm32f0xx_it.o [1]
+EmptyFunction           0x08000727    0x2  Code  Gb  main.o [1]
+ErrorHandler            0x0800090f   0x34  Code  Gb  main.o [1]
+Event                   0x20000628    0x8  Data  Lc  EventHandler.o [1]
+EventPtr                0x20000004    0x4  Data  Lc  EventHandler.o [1]
+ExecuteEvent            0x08001709   0x30  Code  Gb  EventHandler.o [1]
+FindPendingEvent        0x08000581   0xbe  Code  Gb  main.o [1]
+FreeUserBuffer          0x08002fdd   0x4a  Code  Gb  usb_core.o [1]
+GetENDPOINT             0x08002c0f    0xe  Code  Gb  usb_core.o [1]
+GetEPDblBuf0Count       0x08002fa1   0x1a  Code  Gb  usb_core.o [1]
+GetEPDblBuf1Count       0x08002fc1   0x1a  Code  Gb  usb_core.o [1]
+GetEPRxCount            0x08002e55   0x1a  Code  Gb  usb_core.o [1]
+GetEPTxCount            0x08002e3b   0x1a  Code  Gb  usb_core.o [1]
+GetEventAddress         0x080003c7   0x2c  Code  Gb  main.o [1]
+GetEventsCount          0x0800173f    0x6  Code  Gb  EventHandler.o [1]
+GetTime                 0x08000283   0x1a  Code  Gb  main.o [1]
+Get_SerialNum           0x08001f77   0x30  Code  Gb  usbd_desc.o [1]
+HardFault_Handler       0x0800374b    0x4  Code  Gb  stm32f0xx_it.o [1]
+I2C_Init                0x08001c35   0x6e  Code  Gb  I2C.o [1]
+I2C_Read                0x08001d09   0xa2  Code  Gb  I2C.o [1]
+I2C_Write               0x08001ca3   0x66  Code  Gb  I2C.o [1]
+IntStatus               0x2000066a    0x1  Data  Lc  RTC.o [1]
+IntToUnicode            0x08001fdd   0x48  Code  Lc  usbd_desc.o [1]
+KEY_ISR                 0x080014a5   0x34  Code  Gb  Key.o [1]
+KeyPressedAction        0x20000640    0x4  Data  Gb  Key.o [1]
+Key_Init                0x080014d9   0x6a  Code  Gb  Key.o [1]
+LED_Init                0x080012ad   0x44  Code  Gb  LED.o [1]
+LED_OFF                 0x08001301    0xe  Code  Gb  LED.o [1]
+LED_ON                  0x080012f1   0x10  Code  Gb  LED.o [1]
+LED_ONwithFreq          0x0800130f   0x7a  Code  Gb  LED.o [1]
+MONTH_DAYS_COUNT        0x080038b8    0xc  Data  Gb  DataTables.o [1]
+NMI_Handler             0x08003749    0x2  Code  Gb  stm32f0xx_it.o [1]
+NVIC_EnableIRQ          0x08000dad    0xe  Code  Lc  Display.o [1]
+NVIC_EnableIRQ          0x080013c9    0xe  Code  Lc  Key.o [1]
+NVIC_EnableIRQ          0x08000a45    0xe  Code  Lc  RTC.o [1]
+NVIC_EnableIRQ          0x08001df5    0xe  Code  Lc  usb_bsp.o [1]
+NVIC_SetPriority        0x08000dbb   0x84  Code  Lc  Display.o [1]
+NVIC_SetPriority        0x080013d7   0x84  Code  Lc  Key.o [1]
+NVIC_SetPriority        0x08000a53   0x84  Code  Lc  RTC.o [1]
+NVIC_SetPriority        0x08001e03   0x84  Code  Lc  usb_bsp.o [1]
+NextEventNum            0x080016d9   0x30  Code  Gb  EventHandler.o [1]
+NextEventTimeLeft       0x08000839   0xd6  Code  Gb  main.o [1]
+PMAToUserBufferCopy     0x08003069   0x28  Code  Gb  usb_core.o [1]
+PendSV_Handler          0x08003751    0x2  Code  Gb  stm32f0xx_it.o [1]
+PrevEventNum            0x080016a1   0x38  Code  Gb  EventHandler.o [1]
+PrevXferDone            0x2000009c    0x1  Data  Gb  RDC2-0041_USB.o [1]
+RDC2_0041_Init          0x0800029d   0xe6  Code  Gb  main.o [1]
+RDC2_0041_USB_ClearStatus
+                        0x08000a05    0xc  Code  Gb  RDC2-0041_USB.o [1]
+RDC2_0041_USB_GetPacket
+                        0x08000a11    0x4  Code  Gb  RDC2-0041_USB.o [1]
+RDC2_0041_USB_GetStatus
+                        0x08000a01    0x4  Code  Gb  RDC2-0041_USB.o [1]
+RDC2_0041_USB_Init      0x08000969   0x28  Code  Gb  RDC2-0041_USB.o [1]
+RDC2_0041_USB_RecPacket
+                        0x08000991   0x52  Code  Gb  RDC2-0041_USB.o [1]
+RDC2_0041_USB_SendData  0x080009e3   0x1e  Code  Gb  RDC2-0041_USB.o [1]
+RDC2_0041_USB_WhileNotReadyToSend
+                        0x08000a15    0xc  Code  Gb  RDC2-0041_USB.o [1]
+RTCIntHandler           0x080003f3   0x6a  Code  Gb  main.o [1]
+RTC_ClearCtrlBit        0x08000d41   0x26  Code  Gb  RTC.o [1]
+RTC_ClearIntStatus      0x08000c33    0x8  Code  Gb  RTC.o [1]
+RTC_DisableAlarm1       0x08000d11    0xa  Code  Gb  RTC.o [1]
+RTC_EnableAlarm1        0x08000cfd    0xa  Code  Gb  RTC.o [1]
+RTC_EnableAlarm2        0x08000d07    0xa  Code  Gb  RTC.o [1]
+RTC_ISR                 0x08000c19   0x14  Code  Gb  RTC.o [1]
+RTC_Init                0x08000ad7   0xc6  Code  Gb  RTC.o [1]
+RTC_IsIntActive         0x08000c2d    0x6  Code  Gb  RTC.o [1]
+RTC_ReadStatus          0x08000c75   0x26  Code  Gb  RTC.o [1]
+RTC_ReadTime            0x08000bad   0x6c  Code  Gb  RTC.o [1]
+RTC_SetAlarm            0x08000cbb   0x42  Code  Gb  RTC.o [1]
+RTC_SetAlarm1           0x08000c9b   0x10  Code  Gb  RTC.o [1]
+RTC_SetAlarm2           0x08000cab   0x10  Code  Gb  RTC.o [1]
+RTC_SetCtrlBit          0x08000d1b   0x26  Code  Gb  RTC.o [1]
+RTC_SetTime             0x08000b9d   0x10  Code  Gb  RTC.o [1]
+ReadEventData           0x08000389   0x3e  Code  Gb  main.o [1]
+ReadSettings            0x080001d9   0x46  Code  Gb  main.o [1]
+Region$$Table$$Base     0x08003800          --   Gb  - Linker created -
+Region$$Table$$Limit    0x08003820          --   Gb  - Linker created -
+Report_buf              0x200005a8   0x40  Data  Lc  usbd_custom_hid_core.o [1]
+Resume                  0x0800354f   0xd8  Code  Gb  usbd_pwr.o [1]
+ResumeS                 0x20000658    0x4  Data  Gb  usbd_pwr.o [1]
+Resume_Init             0x08003533   0x1c  Code  Gb  usbd_pwr.o [1]
+SPI_Send                0x0800126b   0x20  Code  Gb  SPI_EEPROM.o [1]
+SVC_Handler             0x0800374f    0x2  Code  Gb  stm32f0xx_it.o [1]
+SetBTABLE               0x08002c05    0xa  Code  Gb  usb_core.o [1]
+SetCNTR                 0x08002bf5    0x8  Code  Gb  usb_core.o [1]
+SetEPDblBuffAddr        0x08002e71   0x3e  Code  Gb  usb_core.o [1]
+SetEPDblBuffCount       0x08002ec1   0xd4  Code  Gb  usb_core.o [1]
+SetEPDoubleBuff         0x08002cb3   0x20  Code  Gb  usb_core.o [1]
+SetEPRxAddr             0x08002dbd   0x1e  Code  Gb  usb_core.o [1]
+SetEPRxCount            0x08002df1   0x4a  Code  Gb  usb_core.o [1]
+SetEPRxStatus           0x08002c77   0x3c  Code  Gb  usb_core.o [1]
+SetEPTxAddr             0x08002d95   0x1e  Code  Gb  usb_core.o [1]
+SetEPTxCount            0x08002ddb   0x16  Code  Gb  usb_core.o [1]
+SetEPTxStatus           0x08002c3f   0x38  Code  Gb  usb_core.o [1]
+SetEPType               0x08002c1d   0x22  Code  Gb  usb_core.o [1]
+SetEventData            0x08001745   0x32  Code  Gb  EventHandler.o [1]
+SetEventState           0x08001671   0x30  Code  Gb  EventHandler.o [1]
+SetEventsCount          0x08001739    0x6  Code  Gb  EventHandler.o [1]
+SetISTR                 0x08002bfd    0x8  Code  Gb  usb_core.o [1]
+SetPreviousEvent        0x08000695   0x2e  Code  Gb  main.o [1]
+State                   0x20000668    0x1  Data  Lc  main.o [1]
+Suspend                 0x0800350d   0x26  Code  Gb  usbd_pwr.o [1]
+SyncEvents              0x08000527   0x4c  Code  Gb  main.o [1]
+SyncTime                0x08000265   0x1e  Code  Gb  main.o [1]
+SysTick_Handler         0x08003753    0x2  Code  Gb  stm32f0xx_it.o [1]
+SystemInit              0x0800363d   0x68  Code  Gb  system_stm32f0xx.o [1]
+TIM14_IRQHandler        0x0800376d    0x8  Code  Gb  stm32f0xx_it.o [1]
+TIM3_IRQHandler         0x0800375d    0x8  Code  Gb  stm32f0xx_it.o [1]
+TimeLeft                0x20000630    0x8  Data  Lc  main.o [1]
+TimeLeftPtr             0x20000008    0x4  Data  Lc  main.o [1]
+TimeLeftSet             0x08000729   0x7c  Code  Gb  main.o [1]
+TimeLeftUpdate          0x080007a5   0x8e  Code  Gb  main.o [1]
+ToggleDTOG_RX           0x08002cf1   0x1e  Code  Gb  usb_core.o [1]
+ToggleDTOG_TX           0x08002d19   0x1e  Code  Gb  usb_core.o [1]
+USBD_ClrCfg             0x08001a29   0x18  Code  Gb  usbd_core.o [1]
+USBD_ClrFeature         0x08002a53   0x36  Code  Lc  usbd_req.o [1]
+USBD_CtlContinueRx      0x08002b9d   0x1e  Code  Gb  usbd_ioreq.o [1]
+USBD_CtlContinueSendData
+                        0x08002b51   0x1e  Code  Gb  usbd_ioreq.o [1]
+USBD_CtlError           0x08002ab9   0x10  Code  Gb  usbd_req.o [1]
+USBD_CtlPrepareRx       0x08002b6f   0x2e  Code  Gb  usbd_ioreq.o [1]
+USBD_CtlReceiveStatus   0x08002bd7   0x1c  Code  Gb  usbd_ioreq.o [1]
+USBD_CtlSendData        0x08002b27   0x2a  Code  Gb  usbd_ioreq.o [1]
+USBD_CtlSendStatus      0x08002bbb   0x1c  Code  Gb  usbd_ioreq.o [1]
+USBD_DCD_INT_cb         0x2000000c   0x1c  Data  Gb  usbd_core.o [1]
+USBD_DCD_INT_fops       0x20000028    0x4  Data  Gb  usbd_core.o [1]
+USBD_DataInStage        0x080018ad   0xc8  Code  Lc  usbd_core.o [1]
+USBD_DataOutStage       0x08001827   0x86  Code  Lc  usbd_core.o [1]
+USBD_DeInit             0x080017cf    0x6  Code  Gb  usbd_core.o [1]
+USBD_DeviceDesc         0x08003884   0x14  Data  Gb  usbd_desc.o [1]
+USBD_GetConfig          0x080029ad   0x48  Code  Lc  usbd_req.o [1]
+USBD_GetDescriptor      0x0800275b  0x140  Code  Lc  usbd_req.o [1]
+USBD_GetLen             0x08002b11   0x16  Code  Lc  usbd_req.o [1]
+USBD_GetStatus          0x080029f5   0x3a  Code  Lc  usbd_req.o [1]
+USBD_GetString          0x08002ac9   0x48  Code  Gb  usbd_req.o [1]
+USBD_HID_AltSet         0x2000064c    0x4  Data  Lc  usbd_custom_hid_core.o [1]
+USBD_HID_CfgDesc        0x080037ac   0x2c  Data  Gb  usbd_custom_hid_core.o [1]
+USBD_HID_DataIn         0x08001bd5   0x14  Code  Gb  usbd_custom_hid_core.o [1]
+USBD_HID_DataOut        0x08001be9   0x1c  Code  Gb  usbd_custom_hid_core.o [1]
+USBD_HID_DeInit         0x08001a8b   0x1a  Code  Gb  usbd_custom_hid_core.o [1]
+USBD_HID_EP0_RxReady    0x08001c2d    0x6  Code  Gb  usbd_custom_hid_core.o [1]
+USBD_HID_GetCfgDesc     0x08001bcb    0xa  Code  Gb  usbd_custom_hid_core.o [1]
+USBD_HID_IdleState      0x20000654    0x4  Data  Lc  usbd_custom_hid_core.o [1]
+USBD_HID_Init           0x08001a41   0x4a  Code  Gb  usbd_custom_hid_core.o [1]
+USBD_HID_Protocol       0x20000650    0x4  Data  Lc  usbd_custom_hid_core.o [1]
+USBD_HID_Report_ID      0x2000066b    0x1  Data  Gb  usbd_custom_hid_core.o [1]
+USBD_HID_SendReport     0x08001bab   0x20  Code  Gb  usbd_custom_hid_core.o [1]
+USBD_HID_Setup          0x08001aa5  0x106  Code  Gb  usbd_custom_hid_core.o [1]
+USBD_HID_cb             0x2000002c   0x24  Data  Gb  usbd_custom_hid_core.o [1]
+USBD_Init               0x0800178d   0x42  Code  Gb  usbd_core.o [1]
+USBD_LangIDDesc         0x080038f8    0x4  Data  Gb  usbd_desc.o [1]
+USBD_ParseSetupRequest  0x08002a89   0x30  Code  Gb  usbd_req.o [1]
+USBD_Reset              0x08001979   0x48  Code  Lc  usbd_core.o [1]
+USBD_Resume             0x080019c1   0x14  Code  Lc  usbd_core.o [1]
+USBD_SOF                0x080019ed   0x1c  Code  Lc  usbd_core.o [1]
+USBD_SetAddress         0x0800289b   0x54  Code  Lc  usbd_req.o [1]
+USBD_SetCfg             0x08001a09   0x20  Code  Gb  usbd_core.o [1]
+USBD_SetConfig          0x080028ef   0xb6  Code  Lc  usbd_req.o [1]
+USBD_SetConfig::cfgidx  0x2000066d    0x1  Data  Lc  usbd_req.o [1]
+USBD_SetFeature         0x08002a2f   0x24  Code  Lc  usbd_req.o [1]
+USBD_SetupStage         0x080017d5   0x52  Code  Lc  usbd_core.o [1]
+USBD_StdDevReq          0x08002531   0x7c  Code  Gb  usbd_req.o [1]
+USBD_StdEPReq           0x080025fd  0x15e  Code  Gb  usbd_req.o [1]
+USBD_StdItfReq          0x080025ad   0x50  Code  Gb  usbd_req.o [1]
+USBD_StrDesc            0x200005e8   0x40  Data  Gb  usbd_req.o [1]
+USBD_StringSerial       0x2000006c   0x1c  Data  Gb  usbd_desc.o [1]
+USBD_Suspend            0x080019d5   0x18  Code  Lc  usbd_core.o [1]
+USBD_USR_ConfigStrDescriptor
+                        0x08001f4f   0x14  Code  Gb  usbd_desc.o [1]
+USBD_USR_DeviceConfigured
+                        0x08000da7    0x2  Code  Gb  usbd_usr.o [1]
+USBD_USR_DeviceDescriptor
+                        0x08001f09    0xa  Code  Gb  usbd_desc.o [1]
+USBD_USR_DeviceReset    0x08000da5    0x2  Code  Gb  usbd_usr.o [1]
+USBD_USR_DeviceResumed  0x08000dab    0x2  Code  Gb  usbd_usr.o [1]
+USBD_USR_DeviceSuspended
+                        0x08000da9    0x2  Code  Gb  usbd_usr.o [1]
+USBD_USR_Init           0x08000da3    0x2  Code  Gb  usbd_usr.o [1]
+USBD_USR_InterfaceStrDescriptor
+                        0x08001f63   0x14  Code  Gb  usbd_desc.o [1]
+USBD_USR_LangIDStrDescriptor
+                        0x08001f13    0xa  Code  Gb  usbd_desc.o [1]
+USBD_USR_ManufacturerStrDescriptor
+                        0x08001f31   0x14  Code  Gb  usbd_desc.o [1]
+USBD_USR_ProductStrDescriptor
+                        0x08001f1d   0x14  Code  Gb  usbd_desc.o [1]
+USBD_USR_SerialStrDescriptor
+                        0x08001f45    0xa  Code  Gb  usbd_desc.o [1]
+USBDataBuf              0x20000568   0x40  Data  Lc  RDC2-0041_USB.o [1]
+USBStatus               0x20000669    0x1  Data  Lc  RDC2-0041_USB.o [1]
+USB_BSP_EnableInterrupt
+                        0x08001ef5   0x14  Code  Gb  usb_bsp.o [1]
+USB_BSP_Init            0x08001e87   0x50  Code  Gb  usb_bsp.o [1]
+USB_Device_dev          0x200004a0   0xc8  Data  Gb  RDC2-0041_USB.o [1]
+USB_IRQHandler          0x08003755    0x8  Code  Gb  stm32f0xx_it.o [1]
+USB_Istr                0x080033dd  0x106  Code  Gb  usb_dcd_int.o [1]
+USR_cb                  0x20000088   0x14  Data  Gb  usbd_usr.o [1]
+USR_desc                0x20000050   0x1c  Data  Gb  usbd_desc.o [1]
+UserToPMABufferCopy     0x08003027   0x38  Code  Gb  usb_core.o [1]
+ValueToShow             0x20000638    0x4  Data  Lc  Display.o [1]
+WriteSettings           0x0800021f   0x46  Code  Gb  main.o [1]
+YearEventsCount         0x20000664    0x2  Data  Lc  EventHandler.o [1]
+__ICFEDIT_region_RAM_end__ {Abs}
+                        0x200017ff          --   Gb  command line/config [2]
+__ICFEDIT_region_RAM_start__ {Abs}
+                        0x20000000          --   Gb  command line/config [2]
+__aeabi_idiv            0x080015bd         Code  Gb  I32DivModFast.o [4]
+__aeabi_idiv0           0x08001df1         Code  Gb  IntDivZer.o [4]
+__aeabi_idivmod         0x080015bd         Code  Gb  I32DivModFast.o [4]
+__aeabi_uidiv           0x080015c3         Code  Gb  I32DivModFast.o [4]
+__aeabi_uidivmod        0x080015c3         Code  Gb  I32DivModFast.o [4]
+__cmain                 0x0800383d         Code  Gb  cmain.o [4]
+__exit                  0x08003871   0x14  Code  Gb  exit.o [5]
+__iar_data_init3        0x080037d9   0x28  Code  Gb  data_init.o [4]
+__iar_packbits_init_single3
+                        0x0800370d   0x3c  Code  Gb  packbits_init_single.o [4]
+__iar_program_start     0x080038dd         Code  Gb  cstartup_M.o [4]
+__iar_zero_init3        0x080036d1   0x3c  Code  Gb  zero_init3.o [4]
+__low_level_init        0x08003857    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x08000000         Data  Gb  startup_stm32f042.o [1]
+_call_main              0x08003849         Code  Gb  cmain.o [4]
+_exit                   0x08003865         Code  Gb  cexit.o [4]
+_main                   0x08003853         Code  Gb  cmain.o [4]
+exit                    0x0800385b    0x8  Code  Gb  exit.o [3]
+flag                    0x2000066c    0x1  Data  Gb  usbd_custom_hid_core.o [1]
+main                    0x080000c1  0x118  Code  Gb  main.o [1]
+remotewakeupon          0x2000065c    0x4  Data  Gb  usbd_pwr.o [1]
+wInterrupt_Mask         0x20000648    0x4  Data  Gb  usb_dcd.o [1]
+
+
+[1] = F:\ArmProjects\RDC2-0041_year\Debug\Obj
+[2] = command line
+[3] = dl6M_tln.a
+[4] = rt6M_tl.a
+[5] = shb_l.a
+
+  14 378 bytes of readonly  code memory
+     379 bytes of readonly  data memory
+   1 643 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
