@@ -1,0 +1,51 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:RDC2_0041">
+
+    <Style TargetType="TextBlock" x:Key="TextBlockStyle">
+        <Setter Property="Foreground" Value="GreenYellow" ></Setter>
+        <Setter Property="FontSize" Value="12" ></Setter>
+    </Style>
+
+    <Style TargetType="Label" x:Key="LabelStyle">
+        <Setter Property="Foreground" Value="GreenYellow" ></Setter>
+        <Setter Property="FontSize" Value="14" ></Setter>
+    </Style>
+
+    <Style TargetType="RadioButton" x:Key="RadioButtonStyle">
+        <Setter Property="Background" Value="#FFEEEEEE" ></Setter>
+        <Setter Property="Foreground" Value="GreenYellow" ></Setter>
+        <Setter Property="FontSize" Value="12" ></Setter>
+    </Style>
+
+    <Style TargetType="CheckBox" x:Key="CheckBoxStyle">
+        <Setter Property="Background" Value="#FFEEEEEE" ></Setter>
+        <Setter Property="Foreground" Value="GreenYellow" ></Setter>
+        <Setter Property="FontSize" Value="14" ></Setter>
+    </Style>
+
+    <Style TargetType="TextBox" x:Key="TextBoxStyle">
+        <Setter Property="Foreground" Value="Black" ></Setter>
+        <Setter Property="Background" Value="#FFEEEEEE" ></Setter>
+        <Setter Property="FontSize" Value="12" ></Setter>
+    </Style>
+
+    <Style TargetType="Border" x:Key="BorderStyle">
+        <Setter Property="BorderBrush" Value="Gray"/>
+        <Setter Property="BorderThickness" Value="2"/>
+    </Style>
+    
+    <Style TargetType="TextBlock" x:Key="MouseOverStyle">
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <SolidColorBrush Color="White"/>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="LightBlue"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

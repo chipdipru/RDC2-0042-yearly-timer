@@ -1,0 +1,158 @@
+﻿<Window x:Class="RDC2_0041.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RDC2_0041"
+        mc:Ignorable="d"
+        Title="Таймер RDC2-0042" Icon="images/RDC_logo_r.png" Height="550" Width="755" MinWidth="755" MaxWidth="755" MinHeight="550" Closing="WindowIsClosing" Background="Black">
+    <Window.CommandBindings>
+        <CommandBinding Command="Copy" Executed="CopyEventButton_Click" />
+        <CommandBinding Command="Paste" Executed="PasteEventButton_Click" />
+        <CommandBinding Command="Delete" Executed="DeleteEventButton_Click" />
+        <CommandBinding Command="New" Executed="NewEventButton_Click" />
+        <CommandBinding Command="Replace" Executed="EditEventButton_Click" />
+        <CommandBinding Command="Open" Executed="OpenFileButton_Click"/>
+        <CommandBinding Command="Save" Executed="SaveFileButton_Click"/>
+    </Window.CommandBindings>
+    <Grid>
+        <DockPanel Margin="0,0,0,0">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="Файл">
+                    <MenuItem Command="Open" />
+                    <MenuItem Command="Save" />
+                </MenuItem>
+                <MenuItem Header="Событие">
+                    <MenuItem Command="New"/>
+                    <MenuItem Command="Replace" Header="Редактировать" />
+                    <MenuItem Command="Copy" />
+                    <MenuItem Command="Paste" />
+                    <MenuItem Command="Delete" />
+                    <MenuItem Header="Удалить все события" Click="DeleteAllButton_Click" />
+                </MenuItem>
+                <MenuItem Header="Сервис">
+                    <MenuItem x:Name="DownloadMenu" Header="Загрузить конфигурацию в устройство" Click="DownloadButton_Click"/>
+                    <MenuItem x:Name="UploadMenu" Header="Прочитать конфигурацию из устройства" Click="UpLoadButton_Click"/>
+                    <MenuItem x:Name="ClearMenu" Header="Очистить конфигурацию устройства" Click="ClearConfigButton_Click"/>
+                    <MenuItem x:Name="TimeMenu" Header="Настройки времени" Click="TimeSetButton_Click"/>
+                </MenuItem>
+            </Menu>
+            <Border DockPanel.Dock="Bottom" Background="#FFEEEEEE" Margin="10,0,10,10" BorderThickness="2" BorderBrush="#FFD4C9C9" Height="32">
+                <Grid Margin="0">
+                    <Image x:Name="StateImage" HorizontalAlignment="Left" Margin="3,0,0,0"/>
+                    <TextBlock x:Name="StateTextBlock" Margin="50,0,0,0" TextWrapping="Wrap" Foreground="Black" FontSize="14" VerticalAlignment="Center"/>
+                </Grid>
+            </Border>
+            <Border x:Name="TotalCountBorder" DockPanel.Dock="Bottom" Background="#FFEEEEEE" Margin="510,0,10,0" BorderThickness="2" BorderBrush="#FFD4C9C9" Height="32">
+                <Grid Margin="0">
+                    <TextBlock x:Name="TotalCount" Margin="10,0,10,0" TextWrapping="Wrap" Foreground="Black" FontSize="14" VerticalAlignment="Center"/>
+                </Grid>
+            </Border>
+            <Grid x:Name="MonthView" Margin="0,10" Width="510">
+                <TextBlock x:Name="MonthName" Style="{StaticResource MouseOverStyle}" Width="auto" VerticalAlignment="Top" Margin="0,5,0,0" FontSize="20" HorizontalAlignment="Center" MouseLeftButtonDown="MonthName_MouseLeftButtonDown"/>
+                <ListView x:Name="MonthDays" Margin="0,50,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Black" HorizontalAlignment="Center" VerticalAlignment="Top" BorderThickness="0">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="7"/>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border x:Name="DayBorder" Uid="{Binding Number}" Width="55" Height="45" Padding="3" BorderThickness="2" MouseLeftButtonDown="DayBorder_MouseLeftButtonClick" BorderBrush="LightGray" Background="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="3" ContextMenuOpening="DayBorder_ContextMenuOpening">
+                                <Border.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Command="New"/>
+                                        <MenuItem Command="Copy" Header="Копировать события дня"/>
+                                        <MenuItem Command="Paste" Header="Вставить события дня"/>
+                                        <MenuItem Command="Delete" Header="Удалить события дня"/>
+                                    </ContextMenu>
+                                </Border.ContextMenu>
+                                <Grid>
+                                    <TextBlock Text="{Binding Number}" Width="Auto" VerticalAlignment="Bottom" FontSize="16" HorizontalAlignment="Left" Margin="2,0,0,0" Foreground="White"/>
+                                    <Border VerticalAlignment="Top" HorizontalAlignment="Right" Background="#FF2C72D6" CornerRadius="5" Padding="2">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Visibility" Value="Visible"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Events.Count}" Value="0">
+                                                        <Setter Property="Border.Visibility" Value="Hidden"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <TextBlock Text="{Binding Events.Count}" Width="Auto" VerticalAlignment="Center" FontSize="14" HorizontalAlignment="Center" Foreground="White"/>
+                                    </Border>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            <Grid x:Name="YearView" Margin="0,10" Width="510" Visibility="Collapsed">
+                <TextBlock Width="auto" VerticalAlignment="Top" Margin="0,5,0,0" FontSize="20" HorizontalAlignment="Center" Text="Год" Foreground="White"/>
+                <ListView x:Name="MonthsList" Margin="0,50,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Black" HorizontalAlignment="Center" VerticalAlignment="Top" BorderThickness="0">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="3"/>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border x:Name="MonthBorder" Uid="{Binding Name}" Width="120" Height="65" Padding="3" BorderThickness="2" MouseLeftButtonDown="MonthBorder_MouseLeftButtonDown" BorderBrush="LightGray" Background="Black" Margin="3" ContextMenuOpening="MonthBorder_ContextMenuOpening">
+                                <Border.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="Копировать события месяца" Click="CopyMonthEvents_Click"/>
+                                        <MenuItem Header="Вставить события месяца" Click="PasteMonthEvents_Click"/>
+                                        <MenuItem Header="Удалить события месяца" Click="DeleteMonthEvents_Click"/>
+                                    </ContextMenu>
+                                </Border.ContextMenu>
+                                <Grid>
+                                    <TextBlock Text="{Binding Name}" Width="Auto" VerticalAlignment="Bottom" FontSize="18" HorizontalAlignment="Left" Margin="10,0,0,5" Foreground="White" />
+                                    <Border VerticalAlignment="Top" HorizontalAlignment="Right" Background="#FF2C72D6" CornerRadius="5" Padding="3" Margin="0,3,3,0">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Visibility" Value="Visible"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding MonthEvents, UpdateSourceTrigger=PropertyChanged}" Value="0">
+                                                        <Setter Property="Border.Visibility" Value="Hidden"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <TextBlock Text="{Binding MonthEvents, UpdateSourceTrigger=PropertyChanged}" Width="Auto" VerticalAlignment="Center" FontSize="14" HorizontalAlignment="Center" Foreground="White"/>
+                                    </Border>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            <ListBox x:Name="EventsList" Margin="0,3,10,0" DockPanel.Dock="Top" SelectionMode="Extended" Drop="DropFile" AllowDrop="True" PreviewDragOver="FilePreviewDragOver" PreviewDragEnter="FilePreviewDragEnter" Background="#FFEEEEEE">
+                <ListBox.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Command="New"/>
+                        <MenuItem Command="Paste" />
+                    </ContextMenu>
+                </ListBox.ContextMenu>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Width="Auto" Orientation="Horizontal" Height="45" Background="#00000000">
+                            <StackPanel.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Command="Replace" Header="Редактировать" />
+                                    <MenuItem Command="Copy" />
+                                    <MenuItem Command="Delete" />
+                                </ContextMenu>
+                            </StackPanel.ContextMenu>
+                            <TextBlock Text="{Binding Hours, StringFormat={}{0:00}}" Margin="10,0,0,0" Width="Auto" VerticalAlignment="Center" FontSize="16" />
+                            <TextBlock Text=":" Margin="5,0,0,0" Width="Auto" VerticalAlignment="Center" FontSize="16" />
+                            <TextBlock Text="{Binding Minutes, StringFormat={}{0:00}}" Margin="5,0,0,0" Width="Auto" VerticalAlignment="Center" FontSize="16" />
+                            <TextBlock Text="Реле:" Margin="10,0,0,0" Width="Auto" VerticalAlignment="Center" FontSize="16" />
+                            <TextBlock Text="{Binding RelayState}" Margin="5,0,0,0" Width="Auto" VerticalAlignment="Center" FontSize="16" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </DockPanel>
+    </Grid>
+</Window>
