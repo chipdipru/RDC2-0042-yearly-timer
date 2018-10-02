@@ -1,0 +1,12 @@
+### Module positions - created on 09/05/18 17:01:01 ###
+### Printed by Pcbnew version kicad (5.0.0)
+## Unit = mm, Angle = deg.
+## Side : top
+# Ref     Val        Package                      PosX       PosY       Rot  Side
+G***      LOGO       RDC_PCB                  109.3000   -70.1000    0.0000  top
+HL2       7SEGMENTS  Oasistek_7SegInd_smd     114.6000   -56.8500    0.0000  top
+HL3       LED        LED_0603_HandSoldering   106.0000   -56.8500  270.0000  top
+HL4       7SEGMENTS  Oasistek_7SegInd_smd     121.8000   -56.8500    0.0000  top
+HL5       7SEGMENTS  Oasistek_7SegInd_smd     129.0000   -56.8500    0.0000  top
+HL6       7SEGMENTS  Oasistek_7SegInd_smd     136.2000   -56.8500    0.0000  top
+## End

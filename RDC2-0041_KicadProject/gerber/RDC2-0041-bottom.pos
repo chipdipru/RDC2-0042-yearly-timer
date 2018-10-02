@@ -1,0 +1,57 @@
+### Module positions - created on 09/05/18 17:01:01 ###
+### Printed by Pcbnew version kicad (5.0.0)
+## Unit = mm, Angle = deg.
+## Side : bottom
+# Ref     Val             Package                                       PosX       PosY       Rot  Side
+C1        0,1мкФ       C_0603_HandSoldering                     -104.3000   -55.0500    0.0000  bottom
+C2        0,1мкФ       C_0603_HandSoldering                     -121.1000   -65.3000   90.0000  bottom
+C3        4,7мкФ       C_0603_HandSoldering                     -113.7000   -92.0000   90.0000  bottom
+C4        0,01мкФ      C_0603_HandSoldering                     -106.1000   -92.9500  180.0000  bottom
+C5        4,7мкФ       C_0603_HandSoldering                     -106.1000   -91.0500  180.0000  bottom
+C6        0,1мкФ       C_0603_HandSoldering                     -112.1000   -71.4000   90.0000  bottom
+C7        0,1мкФ       C_0603_HandSoldering                     -122.6000   -65.3000   90.0000  bottom
+C8        0,1мкФ       C_0603_HandSoldering                     -132.1000   -79.4000    0.0000  bottom
+C9        10мкФ        TantalC_SizeA_EIA-3216_HandSoldering_mm  -109.0500   -87.8000    0.0000  bottom
+C10       0,1мкФ       C_0603_HandSoldering                     -110.0000   -71.4000   90.0000  bottom
+C11       0,1мкФ       C_0603_HandSoldering                     -117.8000   -87.4000   90.0000  bottom
+C12       0,1мкФ       C_0603_HandSoldering                     -148.2500   -56.9000   90.0000  bottom
+DA1       LP2985AIM5-3.3  SOT-23-5_mm                              -110.4000   -92.0000  180.0000  bottom
+DD1       DS3231          SOIC-16_7.5x10.3mm_Pitch1.27mm           -106.5100   -62.1000  270.0000  bottom
+DD2       STM32F042K6Tx   LQFP-32_7x7mm_Pitch0.8mm                 -121.5000   -74.9000  270.0000  bottom
+DD3       25LC_EEPROM     SOIC-8_3.9x4.9mm_Pitch1.27mm             -109.0500   -77.6500   90.0000  bottom
+G***      LOGO            Logo_silk_OSHW_6x6mm_                    -109.3000   -52.2000  180.0000  bottom
+HL1       LTV-817         LTV817S                                  -138.1000   -88.6000   90.0000  bottom
+R1        330R            R_0603_HandSoldering                     -137.9000   -84.8500  180.0000  bottom
+R2        10k             R_0603_HandSoldering                     -142.0000   -92.3500    0.0000  bottom
+R3        0R              R_0603_HandSoldering                     -119.3000   -65.1500   90.0000  bottom
+R4        4k7             R_0603_HandSoldering                     -106.8500   -71.2500   90.0000  bottom
+R5        4k7             R_0603_HandSoldering                     -105.2500   -71.2500   90.0000  bottom
+R6        330R            R_0603_HandSoldering                     -105.0000   -76.9500   90.0000  bottom
+R7        10k             R_0603_HandSoldering                     -105.0000   -81.2500  270.0000  bottom
+R8        10k             R_0603_HandSoldering                     -117.4500   -61.0500  270.0000  bottom
+R9        10k             R_0603_HandSoldering                     -124.6500   -61.0500  270.0000  bottom
+R10       10k             R_0603_HandSoldering                     -131.8500   -61.0500  270.0000  bottom
+R11       10k             R_0603_HandSoldering                     -139.0500   -61.0500  270.0000  bottom
+R12       10k             R_0603_HandSoldering                     -109.7000   -82.8500  180.0000  bottom
+R13       10k             R_0603_HandSoldering                     -108.4500   -71.2500  270.0000  bottom
+R14       10k             R_0603_HandSoldering                     -126.7500   -65.3000   90.0000  bottom
+R15       300             R_0603_HandSoldering                     -132.1000   -67.9500    0.0000  bottom
+R16       300             R_0603_HandSoldering                     -132.1000   -71.1500    0.0000  bottom
+R17       300             R_0603_HandSoldering                     -132.1000   -74.3500    0.0000  bottom
+R18       300             R_0603_HandSoldering                     -132.1000   -82.1500    0.0000  bottom
+R19       300             R_0603_HandSoldering                     -132.1000   -69.5500    0.0000  bottom
+R20       300             R_0603_HandSoldering                     -132.1000   -72.7500    0.0000  bottom
+R21       300             R_0603_HandSoldering                     -132.1000   -75.9500    0.0000  bottom
+R22       300             R_0603_HandSoldering                     -132.1000   -83.7500    0.0000  bottom
+R23       22R             R_0603_HandSoldering                     -121.5000   -83.1000  270.0000  bottom
+R24       22R             R_0603_HandSoldering                     -119.9000   -83.1000  270.0000  bottom
+R25       10k             R_0603_HandSoldering                     -128.3500   -65.3000   90.0000  bottom
+REF**     Hole_3.5        Hole_3.5                                 -116.3500   -98.5000    0.0000  bottom
+REF**     Hole_3.5        Hole_3.5                                 -124.4500   -98.5000    0.0000  bottom
+VD1       USBLC6          SOT23-6L                                 -120.7000   -88.3500   90.0000  bottom
+VD2       D               SOD-123                                  -124.8500   -89.6000  270.0000  bottom
+VT1       BSS138          SOT-23_mm                                -114.6000   -61.1500  180.0000  bottom
+VT2       BSS138          SOT-23_mm                                -121.8000   -61.1500  180.0000  bottom
+VT3       BSS138          SOT-23_mm                                -129.0000   -61.1500  180.0000  bottom
+VT4       BSS138          SOT-23_mm                                -136.2000   -61.1500  180.0000  bottom
+## End

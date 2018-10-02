@@ -1,0 +1,17 @@
+(module NewComponents:TC-0120 (layer F.Cu) (tedit 5B7DAC59)
+  (fp_text reference SW1 (at 0 -2.65) (layer F.SilkS) hide
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (fp_text value SW_PUSH (at 0 3) (layer F.Fab)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (fp_line (start -3 1.75) (end 3 1.75) (layer F.SilkS) (width 0.15))
+  (fp_line (start -3 -1.75) (end 3 -1.75) (layer F.SilkS) (width 0.15))
+  (pad 2 thru_hole circle (at 3.25 0) (size 1.9 1.9) (drill 1.3) (layers *.Cu *.Mask F.SilkS))
+  (pad 1 thru_hole circle (at -3.25 0) (size 1.9 1.9) (drill 1.3) (layers *.Cu *.Mask F.SilkS))
+  (model D:/work/KiCad3DModels/TC-0120.wrl
+    (at (xyz -0.01 0.005 0))
+    (scale (xyz 0.3937 0.3937 0.3937))
+    (rotate (xyz 0 0 0))
+  )
+)
